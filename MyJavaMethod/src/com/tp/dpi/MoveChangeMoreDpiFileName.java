@@ -13,16 +13,16 @@ public class MoveChangeMoreDpiFileName {
 	
 	
 	// 文件夹路径
-	static String filePath ="C:\\Users\\Administrator\\Desktop\\Android_newnew\\Android";
+	static String filePath ="C:/Users/Administrator/Desktop/BL007A入户视频/Android";
 	
 	//改名称后移动到
 	static String newFilePath ="D:/bbb";
 	
 	//原来的名称
-	static String oldName ="bg_screen_05.png";
+	static String oldName ="shadow_up.png";
 	
 	// 新名称
-	static String newName ="dinuan_bg_screen_05.png";
+	static String newName ="buttom_shadow_up.png";
 	
 	public static void main(String[] args) {
 		
