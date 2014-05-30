@@ -48,17 +48,26 @@ public class BeanCreate {
 		fileName ="ModelBean";
 		daoBeanCreate = new CreateBeanFile();
 		daoBeanCreate.createFile("DaoBean.java");
-
+		
+		
+		// bean 开头
+		beanCreate.writeLine("public class "+fileName +" {");
+		
+		//成员变量
 		for (int i = 0; i < arrayList.size(); i++) {
 			parseStr(arrayList.get(i));
 		}
 
+		// 静态变量
 		for (int i = 0; i < arrayList.size(); i++) {
 			parseStrFinal(arrayList.get(i));
 		}
 
+		//bean 结束
+		beanCreate.writeLine("}");
+		
 		/**
-		 * json 方法创建
+		 * json 解析方法创建
 		 */
 		List<String> jsonMehtods = new ArrayList<String>();
 		for (int i = 0; i < arrayList.size(); i++) {
@@ -67,14 +76,13 @@ public class BeanCreate {
 		creteJsonMehtod(jsonMehtods);
 		createJsonsMehtod();
 		
+		
 		/**
 		 * 创建读取
 		 */
 		
-		
 		for (int i = 0; i < arrayList.size(); i++) {
-			createDbToObjectMehtod(arrayList.get(i));
-			
+			//createDbToObjectMehtod(arrayList.get(i));
 			daoBeanCreate.writeLine(createDbToObjectMehtod(arrayList.get(i)));
 		}
 		
